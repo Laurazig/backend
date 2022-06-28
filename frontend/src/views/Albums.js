@@ -190,7 +190,7 @@ const Albums = props => {
             <h2 id="greeting">Welcome {firstName}!</h2>
             <Logout logout={props.logout} />
             <Deregister deregister={props.deregister} />
-          {isAdmin && < UsersData  UsersData = {props.usersData} />}
+          {isAdmin && < UsersData  currentUserId= {props.currentUserId} token={props.token}/>}
            
             <h1>Add an Album to the Collection!</h1>
 

@@ -10,6 +10,8 @@ import loginRouter from "./routes/login.js";
 import usersRouter from "./routes/users.js";
 import albumsRouter from "./routes/albums.js";
 
+import cookieParser from "cookie-parser";
+
 const app = express();
 
 // Initiate dotenv so you can use environment variables
@@ -22,7 +24,9 @@ mongoose.connection.on("open", () => console.log("Database connection establishe
 mongoose.connection.on("error", () => console.error);
 
 // Allows ALL cors requests to all our routes
-app.use(cors());
+app.use(cors({origin: "http://localhost:300", Credentials:true}));
+
+app.use(cookieParser())
 
 // We can use express's .json() method to parse JSON data received in any request
 app.use(express.json());

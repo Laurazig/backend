@@ -28,6 +28,7 @@ export const loginPost = async (req, res, next) => {
 let newToken;
 try{
     newToken= jwt.sign({ id: found.id }, "myserversecretkey", {expiresIn: "1h"})
+    res.cookie("dataCookie", newToken, {httpOnly: true,sameSite:"strict"})
 } catch {
     return next (createError(500, "signup not completed"))
 }
