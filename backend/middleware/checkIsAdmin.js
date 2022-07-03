@@ -1,11 +1,12 @@
 import createError from "http-errors";
 import jwt from "jsonwebtoken";
-import User from "../models/user";
+import User from "../models/user.js";
 
 const isAdmin = async (req,res,next) =>{
     let token;
     try {
-        token = req.headers.authorization.split(" ")[1]; 
+        //token = req.headers.authorization.split(" ")[1]; 
+        token= req.cookies.dataCookie;
         if(!token){      
             throw new Error("user unauthorised")
         }

@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "**Goal:** Allow admins to click the `<UserData />` button and get a count of the number of users in the `users` collection. :-)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laurazig/backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laurazig/backend/issues"
+  },
+  "homepage": "https://github.com/Laurazig/backend#readme"
+}

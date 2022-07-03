@@ -4,7 +4,9 @@ import createError from "http-errors"
 const authoriseUser = (req,res,next) =>{
     let token;
     try {
-        token = req.headers.authorisation.split(" ")[1]; //grab token
+        console.log("cookie", req.cookies.dataCookies);
+        //token = req.headers.authorisation.split(" ")[1]; 
+        token = req.cookies.dataCookie        
         if(!token){      
             throw new Error("user unauthorised")
         }

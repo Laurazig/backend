@@ -1,9 +1,10 @@
 const UsersData = props => {
     const showUserCount = async ()=>{
         const settings = {
-            headers: {
-                "Authorization": "Bearer " + props.token
-            }
+            // headers: {
+            //     "Authorization": "Bearer " + props.token
+            // }
+            credntials:"include"
         }
         const response = await fetch(process.env.REACT_APP_SERVER_URL + `/admin/${props.currentUserId}/count`, settings);
         const parsedRes = await response.json();

@@ -49,7 +49,8 @@ const Register = props => {
       body: JSON.stringify(newUser),
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      Credentials:"include"
     }
     console.log(process.env.REACT_APP_SERVER_URL)
     // Make a POST request to the "/register" endpoint in our server...
@@ -59,9 +60,9 @@ const Register = props => {
     try {
       // If the request was successful...
       if (response.ok) {
-        const now = new Date();
-        const tokenExpiry =new Date(now.getTime() + 1000 * 60 *60);
-        localStorage.setItem("data", JSON.stringify({ token:parsedRes.token, id:parsedRes.id, expiry:tokenExpiry.toISOString()}));
+        // const now = new Date();
+        // const tokenExpiry =new Date(now.getTime() + 1000 * 60 *60);
+        // localStorage.setItem("data", JSON.stringify({ token:parsedRes.token, id:parsedRes.id, expiry:tokenExpiry.toISOString()}));
         props.login(parsedRes.token, parsedRes.id);
       } else {
         throw new Error(parsedRes.message);

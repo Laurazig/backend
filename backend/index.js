@@ -9,6 +9,7 @@ import registerRouter from "./routes/register.js";
 import loginRouter from "./routes/login.js";
 import usersRouter from "./routes/users.js";
 import albumsRouter from "./routes/albums.js";
+import adminRouter  from "./routes/admin.js"
 
 import cookieParser from "cookie-parser";
 
@@ -24,7 +25,7 @@ mongoose.connection.on("open", () => console.log("Database connection establishe
 mongoose.connection.on("error", () => console.error);
 
 // Allows ALL cors requests to all our routes
-app.use(cors({origin: "http://localhost:300", Credentials:true}));
+app.use(cors({origin: "http://localhost:3000", credentials:true}));
 
 app.use(cookieParser())
 
@@ -44,6 +45,9 @@ app.use("/login", loginRouter);
 app.use("/users", usersRouter);
 
 app.use("/albums", albumsRouter);
+
+app.use("/admin", adminRouter);
+
 
 // The last registered middleware = global error handler
 app.use(globalErrorHandler);

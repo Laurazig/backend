@@ -1,6 +1,6 @@
 import createError from "http-errors";
 import User from "../models/user.js";
-export const countUser = async (req, res, next) => {
+export const countUsers = async (req, res, next) => {
     let numOfDocs;
     try {
         numOfDocs = await User.countDocuments({})

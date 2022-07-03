@@ -20,9 +20,10 @@ const Albums = props => {
     useEffect(() => {
         const fetchUserData = async () => {
             const settings = {
-                headers: { 
-                    "Authorisation": "Bearer " + props.token
-                }
+                // headers: { 
+                //     "Authorisation": "Bearer " + props.token
+                // },
+                credentials:"include"
             }
             // Make a GET request to the "/users/:id" endpoint in our server...
             // ... and then handle the response from the server
@@ -84,7 +85,8 @@ const Albums = props => {
             headers: {
                 "Content-Type": "application/json",
                 "Authorisation": "Bearer " + props.token
-            }
+            },
+            Credentials:"include"
         }
 
         // Make a request to create the new album in the "albums" collection (if needed)...
@@ -101,8 +103,9 @@ const Albums = props => {
                     body: JSON.stringify({ id: parsedRes.id }),
                     headers: {
                         "Content-Type": "application/json",
-                         "Authorisation": "Bearer " + props.token
-                    }
+                         //"Authorisation": "Bearer " + props.token
+                    },
+            Credentials:"include"
                 }
 
                 // Make a second fetch request to add the new album id to the user's "albums" array

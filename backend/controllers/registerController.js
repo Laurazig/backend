@@ -41,7 +41,8 @@ export const registerPost = async (req, res, next) => {
     //create& issue JWT
     let newToken;
     try{
-        newToken= jwt.sign({ id: newUser.id }, "myserversecretkey", {expiresIn: "1h"})
+        newToken= jwt.sign({ id: newUser.id }, process.env.SECRET_KEY, {expiresIn: "1h"})
+        res.cookie("")
     } catch {
         return next (createError(500, "signup not completed"))
     }

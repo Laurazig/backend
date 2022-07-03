@@ -1,4 +1,30 @@
-# Task 29 - Part 2
+# Task 30 - Part 2  28 June 2022
+
+We have now changed our authorization middleware. Now the request from the frontend must contain a valid token inside a **cookie** to go to the next middleware.
+
+So far we updated the our logic in the **frontend** to send the cookie in the request when:
+    - Getting the user's relevant data
+    - Adding new album
+    - Adding the `id` of the new album to the user's list of albums in the database
+
+- Make sure the rest of your functionality also works:
+    - Deleting one album
+    - Deleting all albums
+    - Deleting the user
+
+- Also make sure an **admin** can still click the new button to find the count of users. **Hint**: You will also need to change the `isAdmin` authorization middleware to use cookies, as well as the frontend GET request. :-)
+
+
+# Task 30 - Part 1    28 June 2022
+
+When the user **logs in**, they now receive a cookie from the backend containing a token.
+
+- Make it so that the user also receive a token when they **register**
+- You will have to make a couple of small changes to `Register.js` (**frontend**) and `registerController.js` (**backend**)
+- If you have forgotten anything, you can check out how we did it when the user logs in. :-)
+- **Note:** When testing, make sure to delete any cookie already in your browser before you register as a new user!
+
+# Task 29 - Part 2    28 June 2022
 
 ## Step 3: Finally, let's give admins a special ability that normal users don't have!
 
